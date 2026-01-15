@@ -1,0 +1,333 @@
+<!--
+/*
+ *
+ * Media Explorer
+ * by Nisar Abed (info@nisar.it | Nisar.it)
+ *
+ */
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Media Explorer</title>
+    <meta name="description" content="Create a multimedia gallery by opening a folder on your computer, device, or PHP web server.">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="assets/lib/magnific-popup/1.1.0/dist/magnific-popup.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div id="page_top"></div>
+
+    <!-- Header -->
+    <div class="header">
+
+        <span class="box_mobile_menu">
+            <div class="options left">
+
+                <div class="cbox">
+                    <div class="btn cbig btn_new_tab" title="New Tab">+</div>
+                </div>
+
+                <div class="space"></div>
+
+                <span class="opt_file_access_mode_fsa">
+                    <div class="cbox">
+                        <div class="select_folder">
+                            <div class="btn btn_select_folder">Select Folder</div>
+                        </div>
+                    </div>
+                </span>
+                <span class="opt_file_access_mode_php">
+                    <div class="cbox">
+                        <div class="with_icon select_server_folder">
+                            <label title="Enter the path of the folder to read. Leave blank to use the server root.">
+                                <div class="icon folder"></div>
+                                <input class="input_server_folder" type="text" autocomplete="off" value="" readonly disabled placeholder="subfolder/path/...">
+                            </label>
+                        </div>
+                    </div>
+                </span>
+                
+            </div>
+            <div class="options right">
+                <div class="cbox">
+                    <div class="btn btn_menu" title="Menu">
+                        &#x2630;
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </span>
+
+        <span class="box_main_menu">
+
+            <div class="options left">
+
+                <span class="opt_file_access_mode_fsa">
+                    <div class="space ux_desktop"></div>
+                    <div class="cbox ux_desktop">
+                        <div class="select_folder">
+                            <div class="btn btn_select_folder">Select Folder</div>
+                        </div>
+                    </div>
+                    <div class="space ux_desktop"></div>
+                    <div class="cbox">
+                        <div class="base_path">
+                            <label>
+                                <input class="input_base_path" type="text" autocomplete="off" value="" readonly disabled placeholder="Selected Folder Path" title="Insert: Selected Folder Path">
+                                <input class="view_subfolder_path" type="text" autocomplete="off" value="" readonly disabled title="Subfolder Path (Automatic)">
+                                <div class="clear"></div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="cbox">
+                        <div class="btn btn_simple circle info_base_path" tooltip-pos="bottom" tooltip="Enter the absolute path to the selected folder (File System Path). If you do not specify a path (leave the field empty), the links will point to the browser’s blob storage (File System Access API Security Policy).">?</div>
+                    </div>
+                </span>
+                <span class="opt_file_access_mode_php">
+                    <div class="space ux_desktop"></div>
+                    <div class="cbox ux_desktop">
+                        <div class="with_icon select_server_folder">
+                            <label title="Enter the path of the folder to read. Leave blank to use the server root.">
+                                <div class="icon folder"></div>
+                                <input class="input_server_folder" type="text" autocomplete="off" value="" readonly disabled placeholder="subfolder/path/...">
+                            </label>
+                        </div>
+                    </div>
+                </span>
+                <div class="cbox ux_desktop">
+                    <div class="btn cbig btn_new_tab" title="New Tab">+</div>
+                </div>
+
+            </div>
+
+            <div class="options right">
+
+                <div class="cbox">
+                    <div class="with_icon with_icon_right max_preview_size">
+                        <label title="Maximum preview size (MB)">
+                            <div class="cbox">
+                                <div class="icon">&#9974;</div>
+                                <input class="input_max_preview_size" type="number" min="0" placeholder="0">
+                                <div class="icon_right">MB</div>
+                            </div>
+                        </label>
+                        <div class="btn btn_simple circle info_fam" tooltip-pos="bottom" tooltip="Maximum file size that can be used as a preview (MB). 0 disables the limit.">?</div>
+                    </div>
+                </div>
+                <div class="space"></div>
+
+                <div class="cbox">
+                    <div class="with_icon file_access_mode">
+                        <label title="File Access Mode">
+                            <div class="icon folder_open"></div>
+                            <select class="fam_select">
+                                <option value="fsa_mode">Disk and Local Network</option><!-- File System Access API -->
+                                <option value="php_mode">PHP Web Server</option><!-- PHP Web Server -->
+                            </select>
+                        </label>
+                        <div class="btn btn_simple circle info_fam" tooltip-pos="bottom" tooltip="File Access Mode: choose [Disk and Local Network] to access files on your computer, device, and local networks (using the File System Access API). Choose [PHP Web Server] to browse files on a running PHP web server (this app must be deployed on the web server).">?</div>
+                    </div>
+                </div>
+                <div class="space"></div>
+                <div class="cbox">
+                    <div class="btn cbig btn_change_view">
+                        <span class="list" title="Switch to List View"><span class="points123">&#10247;</span>&#9776;</span>
+                        <span class="gallery" title="Switch to Gallery View">&#9783;</span>
+                    </div>
+                </div>
+                <div class="cbox">
+                    <div class="btn cbig btn_change_theme">
+                        <span class="light" title="Switch to Light Theme">&#x263C;</span>
+                        <span class="dark"  title="Switch to Dark Theme">&#x263E;</span>
+                    </div>
+                </div>
+                <div class="cbox">
+                    <select class="select_lang">
+                        <option value="en">English</option>
+                        <option value="it">Italiano</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="clear"></div>
+        </span>
+
+        <div class="clear"></div>
+
+        <div class="options nav">
+            <div class="box_breadcrumb">
+                <div class="breadcrumb" id="breadcrumb"></div>
+            </div>
+            <div class="box_search">
+                <label><input type="text" class="search_input" placeholder="Search files or folders..." autocomplete="off" readonly disabled /></label>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="clear"></div>
+        <div class="messages"></div>
+
+    </div>
+
+    <!-- Finder -->
+    <div class="finder" id="finder"></div>
+    <div class="btn btn_up" title="Go Up">&#x25B2;</div>
+
+    <!-- Footer -->
+    <div class="footer">
+
+        <div class="counter">
+            <div class="counter_box">
+                <div class="box loading"></div>
+                <div class="box items"></div>
+                <div class="box folders"></div>
+                <div class="box files"></div>
+            </div>
+            <div class="tt_box tt_summary"></div>
+        </div>
+
+        <div class="info left">
+            <span class="app_info btn_show_modal_app_info" title="About Media Explorer">
+                <span class="icon circle">&#8505;</span>
+                <span class="title">ME</span>
+                <spam class="version"></spam>
+            </span>
+        </div>
+
+        <div class="options right">
+
+            <div class="size_control">
+                <label data-title="Items per Row (Size)" title="Items per Row (Size)">
+                    <input class="size_selector" type="range" readonly disabled />
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="finder_loading loading_indicator spinner" title="Loading..."></div>
+
+    <!-- Modals -->
+    <div class="modal browser_not_supported">
+        <div class="overlay btn_close_modal"></div>
+        <div class="content txtc">
+            <h3 class="modal_title">Browser not compatible</h3>
+            <span class="info_txt">
+                This browser does not support the <strong>File System Access API</strong>!<br> <strong>Use a compatible browser, for example:</strong>
+            </span>
+            <div class="clear"></div>
+            <ul class="list_center txtl">
+                <li><a href="https://www.google.com/chrome/" rel="nofollow" target="_blank">Google Chrome (v86+)</a></li>
+                <li><a href="https://www.opera.com/" rel="nofollow" target="_blank">Opera (v72+)</a></li>
+                <li><a href="https://www.microsoft.com/edge/" rel="nofollow" target="_blank">Microsoft Edge (v86+)</a></li>
+            </ul>
+            <div class="clear"></div>
+            <div class="action">
+                <div class="btn btn_close_modal">
+                    <span class="btn_icon">&times;</span> 
+                    <span class="btn_label">Close</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal errors">
+        <div class="overlay btn_close_modal"></div>
+        <div class="content txtl">
+            <h3 class="modal_title">Errors</h3>
+            <span class="info_error directory_generic_error">
+                <strong>An error occurred while selecting the folder.</strong>
+            </span>
+            <span class="info_error directory_not_allowed_error">
+                <strong>Permissions Denied.</strong> <br> The selected directory cannot be accessed.
+            </span>
+            <span class="info_error directory_change_error">
+                <strong>Changing Directory</strong> <br> The selected directory could not be accessed. <br> Please check the folder's permissions or status.
+            </span>
+            <span class="info_error php_server_unavailable_error">
+                <strong>PHP Server Unavailable</strong> <br> You can use this type of file access mode <br> only if the PHP server is running.
+            </span>
+            <div class="clear"></div>
+            <div class="action">
+                <div class="btn btn_close_modal">
+                    <span class="btn_icon">&times;</span> 
+                    <span class="btn_label">Close</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal options">
+        <div class="overlay btn_close_modal"></div>
+        <div class="content txtl">
+            <span class="section select_hhconv_limit">
+                <h3 class="title">HEIF/HEIC file Conversion</h3>
+                <span class="text1">The browser you are using does not natively support HEIF/HEIC formats; therefore conversion is necessary to view them. If you want to avoid conversion, use Safari.</span>
+                <br><br>
+                <label>
+                    <strong class="text2">Simultaneous conversion limit set to</strong> 
+                    <span class="set_limit"><input type="number" min="1" max="99" value="1" placeholder="1"></span>
+                </label>
+                <br><br>
+                <span class="text3">To apply the new settings you will need to reload the app and start over. A value that is too high can overload the system; if you notice any problems, restore the default value.</span>
+                <br><br>
+                <div class="clear"></div>
+                <div class="action">
+                    <div class="btn left btn_reload_app">
+                        <span class="btn_icon">&#x21BB;</span> 
+                        <span class="btn_label">Restart</span>
+                    </div>
+                    <div class="btn left btn_set_default">
+                        <span class="btn_label">Set Default (1)</span>
+                    </div>
+                    <div class="btn right btn_close_modal">
+                        <span class="btn_icon">&times;</span> 
+                        <span class="btn_label">Close</span>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </span>
+        </div>
+    </div>
+
+    <div class="modal app_info">
+        <div class="overlay btn_close_modal"></div>
+        <div class="content txtc">
+            <h3 class="modal_title">
+                <span class="app_title">Media Explorer</span><br>
+                <a class="link_dev" href="https://www.nisar.it" target="_blank" rel="nofollow" title="Developer: Nisar Abed - Nisar.it">developed by Nisar Abed</a>
+            </h3>
+            <div class="app_desc">Media Explorer is a tool for browsing files and folders in a media‑style gallery from the web browser. It lets you navigate content on your local computer or on a PHP server, showing previews for media files and folders. It plays audio and video and also displays images in slideshow mode. Visit the GitHub repository for more information.</div>
+            <div class="credits">
+                <span class="item txt_credits">Credits:</span>
+                <a class="item link_dev" href="https://www.nisar.it" target="_blank" rel="nofollow" title="Developer: Nisar Abed - Nisar.it">Nisar.it</a>
+                <a class="item link_repo" href="https://github.com/nisar86/media-explorer" target="_blank" rel="nofollow" title="Repository: Media Explorer on GitHub.com">GitHub.com</a>
+                <a class="item link_readme" href="https://github.com/nisar86/media-explorer/README.md" target="_blank" rel="nofollow" title="Readme">Readme</a>
+                <a class="item link_license" href="https://github.com/nisar86/media-explorer/LICENSE.txt" target="_blank" rel="nofollow" title="License">License</a>
+            </div>
+            <div class="clear"></div>
+            <div class="action">
+                <div class="btn btn_close_modal">
+                    <span class="btn_icon">&times;</span> 
+                    <span class="btn_label">Close</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- info Box -->
+    <div class="info_box"></div>
+
+    <!-- Script -->
+    <script src="assets/lib/jquery/3.7.0/jquery.js"></script>
+    <script src="assets/lib/magnific-popup/1.1.0/dist/jquery.magnific-popup.js"></script>
+    <script src="assets/lib/heic2any/0.0.4/dist/heic2any.min.js"></script>
+    <script src="assets/play.js"></script>
+
+</body>
+</html>
