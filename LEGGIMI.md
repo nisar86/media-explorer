@@ -5,7 +5,7 @@ Permette di navigare contenuti sul computer locale o su un server PHP mostrando 
 Permette la visualizzazione di immagini in slideshow e la riproduzione di file multimediali (audio,video) in coda.   
 Sviluppato con HTML, JS e [jQuery](https://jquery.com/) è progettato per funzionare senza dipendenze esterne, tutta la app è contenuta nella cartella `media-explorer`.
 
-![Screenshot Galleria (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_server_gallery_files.jpg)
+![Screenshot Galleria (Desktop)](https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_desktop_server_gallery_files.jpg?raw=true)
 
 # Setup
 
@@ -113,12 +113,12 @@ Alcune configurazioni del web server possono impedire il corretto funzionamento 
 
 ## Screenshot
 
-![Screenshot Riproduzione Video (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_play_video.jpg) 
-![Screenshot Lista (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_list_files.jpg) 
-![Screenshot Processo di conversione HEIF/HEIC (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_heif_heic_conversion.jpg) 
+![Screenshot Riproduzione Video (Desktop)](https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_desktop_play_video.jpg?raw=true) 
+![Screenshot Lista (Desktop)](https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_desktop_list_files.jpg?raw=true) 
+![Screenshot Processo di conversione HEIF/HEIC (Desktop)](https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_desktop_heif_heic_conversion.jpg?raw=true) 
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="https://www.nisar.it/app/media-explorer/screenshots/fam_mobile_file_counter.jpg"  width="32%" alt="Screenshot Contatore File (Mobile)">
-  <img src="https://www.nisar.it/app/media-explorer/screenshots/fam_mobile_show_image.jpg"    width="32%" alt="Screenshot Slideshow Immagini (Mobile)">
-  <img src="https://www.nisar.it/app/media-explorer/screenshots/fam_mobile_video_preview.jpg" width="32%" alt="Screenshot Anteprima file Video (Mobile)">
+  <img src="https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_mobile_file_counter.jpg?raw=true"  width="32%" alt="Screenshot Contatore File (Mobile)">
+  <img src="https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_mobile_show_image.jpg?raw=true"    width="32%" alt="Screenshot Slideshow Immagini (Mobile)">
+  <img src="https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_mobile_video_preview.jpg?raw=true" width="32%" alt="Screenshot Anteprima file Video (Mobile)">
 </div>

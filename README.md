@@ -5,7 +5,7 @@ It allows you to browse content on your local computer or on a PHP server, displ
 It supports viewing images in a slideshow and playing media files (audio, video) in a queue.      
 Developed with HTML, JS and [jQuery](https://jquery.com/), it is designed to work without external dependencies: the entire app is contained in the `media-explorer` folder.
 
-![Gallery Screenshot (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_server_gallery_files.jpg)
+![Gallery Screenshot (Desktop)](https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_desktop_server_gallery_files.jpg?raw=true)
 
 # Setup
 
@@ -113,12 +113,12 @@ Some web server configurations may prevent certain media formats (video/audio/im
 
 ## Screenshots
 
-![Screenshot Video Playback (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_play_video.jpg) 
-![Screenshot List View (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_list_files.jpg) 
-![Screenshot HEIF/HEIC Conversion Process (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_heif_heic_conversion.jpg) 
+![Screenshot Video Playback (Desktop)](https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_desktop_play_video.jpg?raw=true) 
+![Screenshot List View (Desktop)](https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_desktop_list_files.jpg?raw=true) 
+![Screenshot HEIF/HEIC Conversion Process (Desktop)](https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_desktop_heif_heic_conversion.jpg?raw=true) 
 
 <div style="display: flex; justify-content: space-between;">
-  <img src="https://www.nisar.it/app/media-explorer/screenshots/fam_mobile_file_counter.jpg"  width="32%" alt="Screenshot File Counter (Mobile)">
-  <img src="https://www.nisar.it/app/media-explorer/screenshots/fam_mobile_show_image.jpg"    width="32%" alt="Screenshot Image Slideshow (Mobile)">
-  <img src="https://www.nisar.it/app/media-explorer/screenshots/fam_mobile_video_preview.jpg" width="32%" alt="Screenshot Video File Preview (Mobile)">
+  <img src="https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_mobile_file_counter.jpg?raw=true"  width="32%" alt="Screenshot File Counter (Mobile)">
+  <img src="https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_mobile_show_image.jpg?raw=true"    width="32%" alt="Screenshot Image Slideshow (Mobile)">
+  <img src="https://github.com/nisar86/media-explorer/blob/main/screenshots/fam_mobile_video_preview.jpg?raw=true" width="32%" alt="Screenshot Video File Preview (Mobile)">
 </div>
