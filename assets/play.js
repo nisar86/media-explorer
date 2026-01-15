@@ -11,7 +11,7 @@
     const APP_NAME = 'Media Explorer';
     const APP_VER  = '1.0';
     // Set App Title
-    document.title = APP_NAME+' v'+APP_VER;
+    document.title = APP_NAME;
 
 
     /*
@@ -186,7 +186,7 @@
     const previewActive_video  = true; // Enable video previews. 
     const previewActive_image  = true; // Enable image previews without conversion. 
     const previewActive_HHimg  = true; // Enable image previews with conversion (handles HEIF/HEIC for non‑Safari browsers). 
-    const previewMaxMB_default = 50;   // Default maximum file size for previews.
+    const previewMaxMB_default = 0;    // Default maximum file size for previews (0 disables the limit).
 
 
     // Video Previews 
@@ -1900,9 +1900,9 @@
             // If the file size in bytes is missing, fileSize_byte will be null.
             const fileSize_byte = file.size || null;
             const fileSize_verified = fileSize_byte !== null;
-            // If you don't know the size (null), don't allow the upload.
-            // If the maximum value is 0 there is no limit, otherwise use the limit.
-            const isAllowedFileSize = fileSize_verified && (previewMaxBytes === 0 || fileSize_byte <= previewMaxBytes);
+            // If the maximum value is 0, there is no limit, so allow uploads.
+            // If you know the file size, allow uploads only for files within the maximum limit.
+            const isAllowedFileSize = previewMaxBytes === 0 || fileSize_verified && fileSize_byte <= previewMaxBytes;
 
             let folderPreviewImage = null;
             // If the file is the correct size and is a compatible image or video.
@@ -1979,9 +1979,9 @@
             // If the file size in bytes is missing, fileSize_byte will be null.
             const fileSize_byte = file.size || null;
             const fileSize_verified = fileSize_byte !== null;
-            // If you don't know the size (null), don't allow the upload.
-            // If the maximum value is 0 there is no limit, otherwise use the limit.
-            const isAllowedFileSize = fileSize_verified && (previewMaxBytes === 0 || fileSize_byte <= previewMaxBytes);
+            // If the maximum value is 0, there is no limit, so allow uploads.
+            // If you know the file size, allow uploads only for files within the maximum limit.
+            const isAllowedFileSize = previewMaxBytes === 0 || fileSize_verified && fileSize_byte <= previewMaxBytes;
             
             // IF Previews are active.
             if (previewActive_all && isAllowedFileSize) {
@@ -2451,9 +2451,9 @@
                     // If the url is not valid fileSize_byte will be null.
                     const fileSize_byte     = await getFileSizeInByte_byHttpHead(href);
                     const fileSize_verified = fileSize_byte !== null;
-                    // If you don't know the size (null), don't allow the upload.
-                    // If the maximum value is 0 there is no limit, otherwise use the limit.
-                    const isAllowedFileSize = fileSize_verified && (previewMaxBytes === 0 || fileSize_byte <= previewMaxBytes);
+                    // If the maximum value is 0, there is no limit, so allow uploads.
+                    // If you know the file size, allow uploads only for files within the maximum limit.
+                    const isAllowedFileSize = previewMaxBytes === 0 || fileSize_verified && fileSize_byte <= previewMaxBytes;
 
                     // IF Previews are active.
                     if (previewActive_all && isAllowedFileSize) {
@@ -2745,9 +2745,9 @@
                             // Check that the preview file size is allowed.
                             const fileSize_byte     = await getFileSizeInByte_byHttpHead(itemPreview.preview);
                             const fileSize_verified = fileSize_byte !== null;
-                            // If you don't know the size (null), don't allow the upload.
-                            // If the maximum value is 0 there is no limit, otherwise use the limit.
-                            isAllowedFileSize = fileSize_verified && (previewMaxBytes === 0 || fileSize_byte <= previewMaxBytes);
+                            // If the maximum value is 0, there is no limit, so allow uploads.
+                            // If you know the file size, allow uploads only for files within the maximum limit.
+                            isAllowedFileSize = previewMaxBytes === 0 || fileSize_verified && fileSize_byte <= previewMaxBytes;
                         }
 
                         // IF Previews are active.
