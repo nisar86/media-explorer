@@ -43,7 +43,11 @@ Developed with HTML, JS and [jQuery](https://jquery.com/), it is designed to wor
 - **Folder navigation via icons and breadcrumbs**.
 - **Displays previews of media files (images/video) and folders**.
 - **Displays download links for all files with an active preview**.
-- **Customizable limit for the size of files displayed as a preview**.
+
+- **Size limit in MB for files used as previews**.
+  - `0` disables the limit (default): the system will try to load a preview for every folder and every media file displayed.
+  - When you set a limit (greater than `0`), the system will try to load previews only for files whose size is within that limit. If you need to work with very large files, setting a limit can be useful to avoid putting excessive load on system memory or the network, reducing the risk of performance issues and crashes.
+  - When a limit is set, if the file size is not available, the preview will not be generated.
 
 - **Compatibility for Apple file formats on non-supporting browsers (non-Safari).**    
   - If the browser cannot read HEIF/HEIC files, a conversion process ([heic2any](https://github.com/alexcorvi/heic2any)) is started to make them viewable.
@@ -80,22 +84,10 @@ Developed with HTML, JS and [jQuery](https://jquery.com/), it is designed to wor
 
 ## Known Issues 
 
-### Issues that may occur in PHP Web Server mode
+- **In PHP Web Server mode**   
+Some web server configurations that affect the encoding of files sent to the browser can, in some cases, prevent the app from working correctly.
 
-Some web server configurations may prevent certain media formats (video/audio/images) from working correctly.  
-**Server-side compression (Brotli/gzip)** applied to files can cause problems and **should be disabled** in folders that contain media used by the app.
-
-- **`Error: net::ERR_CONTENT_DECODING_FAILED 200`**   
-  If this issue occurs, some types of media and/or conversion processes may fail.   
-  **This error can occur with some files (e.g. mp4, heic) when Brotli/gzip compression is enabled on the server and the browser tries to access them**. The error happens at the network level, before the script sees anything: the browser receives the response from the server, reads the `Content-Encoding` header (e.g. `br`) and attempts to decompress; if decompression fails, the browser discards the response and returns an error. When this happens, the script never sees the file bytes, only a failed request.
-
-  **Check for the typical signs of this issue:**   
-  Open in web browser --> Developer Tools --> Network --> One of the files that fails --> Headers --> Response Headers.  
-  Check whether the value of **Content-Encoding** is **br (or gzip)** and whether **Etag ends with -br** (e.g. `"000...-br"`).
-  
-  **Solution:**  
-  Change the configuration of the web server (Apache/Nginx) or the .htaccess rules (if supported by your hosting).   
-  Disable server-side compression (Brotli/gzip) for the affected media files by excluding their MIME types from compression (`video/*`, `audio/*`, `image/*`) or by excluding the directory that contains the files that need to be read.   
+  - **Server-side compression (Brotli/gzip)** can prevent the file size from being correctly obtained via standard HTTP headers, causing **malfunctions in the preview size limiter**. **To fix** this issue, you need to **disable compression on the folders read by the app** (this operation may not be allowed on shared hosting).
 
 ## Related Links
 

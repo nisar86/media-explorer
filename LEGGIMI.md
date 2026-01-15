@@ -43,7 +43,11 @@ Sviluppato con HTML, JS e [jQuery](https://jquery.com/) è progettato per funzio
 - **Navigazione tra le cartelle tramite icone e breadcrumbs**.
 - **Visualizza l'anteprima di file media (immagini/video) e cartelle**.
 - **Visualizza link di download per tutti i file con anteprima attiva**.
-- **Limite personalizzabile alla dimensione dei file visualizzati come anteprima**.
+
+- **Limite in MB per la dimensione dei file usati come anteprima**.
+  - `0` disattiva il limite (default): il sistema tenterà di caricare un'anteprima per ogni cartella e per ogni file multimediale visualizzato.
+  - Impostando un limite (maggiore di `0`) il sistema tenterà di caricare solo le anteprime dei file con  dimensione che rientra nel limite. Se vuoi leggere file molto grandi, può essere utile impostare un limite per evitare di gravare eccessivamente sulla memoria di sistema o sulla rete, riducendo il rischio di problemi di performance e crash.   
+  - Quando è impostato un limite, se la dimensione del file non è disponibile, l'anteprima non viene generata.
 
 - **Compatibilità formati file Apple su browser non compatibili (non Safari).**    
   - Se il browser non legge i file HEIF/HEIC, per poterli visualizzare viene avviata la conversione ([heic2any](https://github.com/alexcorvi/heic2any)) di questi file.
@@ -80,22 +84,10 @@ Sviluppato con HTML, JS e [jQuery](https://jquery.com/) è progettato per funzio
 
 ## Problemi Noti 
 
-### Problemi che possono presentarsi in modalità Web Server PHP
-
-Alcune configurazioni del web server possono impedire il corretto funzionamento di alcuni formati media (video/audio/immagini).  
-**La compressione lato server (Brotli/gzip)** applicata ai file può creare problemi e **andrebbe disattivata** nelle cartelle che contengono i media usati dalla app.
-
-- **`Errore: net::ERR_CONTENT_DECODING_FAILED 200`**   
-  Se si verifica questo problema non sarà possibile eseguire alcuni tipi di media e/o eseguire i processi di conversione.   
-  **Questo errore può verificarsi con alcuni file (es. mp4, heic) quando la compressione Brotli/gzip è attiva sul server e il browser tenta di accedervi**. L’errore nasce a livello di rete, prima che lo script veda qualcosa, il browser riceve la risposta dal server, legge l’header `Content-Encoding` (es. `br`) e prova a decomprimere; se la decompressione fallisce il browser scarta la risposta e restituisce un errore. Quando questo accade, lo script non vede mai i byte del file, ma soltanto una richiesta fallita.
-
-  **Verifica se sono presenti i segnali tipici del problema:**   
-  Apri nel browser web --> Strumenti per sviluppatori --> Network --> Uno dei file che da errore --> Headers --> Response Headers.  
-  Controlla se il valore di **Content-Encoding** è **br (o gzip)** e se **Etag contiene -br finale** (es: `"000...-br"`).
+- **In modalità Web Server PHP**   
+Alcune configurazioni del server web che agiscono sulla codifica dei file inviati al browser possono, in alcuni casi, impedire il corretto funzionamento dell'app.
   
-  **Soluzione:**  
-  Modifica la configurazione del server web (Apache/Nginx) o le regole .htaccess (se l'hosting lo permette).   
-  Disattivare la compressione (Brotli/gzip) lato server per i file media interessati escludendo i MIME type dalla compressione (`video/*`, `audio/*`, `image/*`) o la directory contenente i file che devono essere letti.   
+  - **La compressione lato server (Brotli/gzip)** può impedire di ottenere correttamente la dimensione dei file tramite le intestazioni HTTP standard, causando **malfunzionamenti nel limitatore della dimensione delle anteprime**. **Per risolvere** il problema è necessario **disattivare la compressione nelle cartelle lette dall'app** (questa operazione su hosting condiviso potrebbe non essere consentita).
 
 ## Link Correlati
 
