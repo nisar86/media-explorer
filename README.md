@@ -100,18 +100,18 @@ Some web server configurations may prevent certain media formats (video/audio/im
 ## Related Links
 
 - Demo: [Media Explorer](https://www.nisar.it/app/media-explorer)
-- English Readme: [Readme.md](https://github.com/nisar86/media-explorer/README.md)
-- Italian Readme: [Leggimi.md](https://github.com/nisar86/media-explorer/LEGGIMI.md)
+- English Readme: [Readme.md](https://github.com/nisar86/media-explorer/blob/main/README.md)
+- Italian Readme: [Leggimi.md](https://github.com/nisar86/media-explorer/blob/main/LEGGIMI.md)
 
 ## License
 
-[Media Explorer License](https://github.com/nisar86/media-explorer/LICENSE.txt)
+[Media Explorer License](https://github.com/nisar86/media-explorer?tab=MIT-1-ov-file)
 
-##Developer
+## Developer
 
 [Nisar Abed (Nisar.it)](https://www.nisar.it)
 
-##Screenshots
+## Screenshots
 
 ![Screenshot Video Playback (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_play_video.jpg) 
 ![Screenshot List View (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_list_files.jpg) 

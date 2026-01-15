@@ -100,18 +100,18 @@ Alcune configurazioni del web server possono impedire il corretto funzionamento 
 ## Link Correlati
 
 - Demo: [Media Explorer](https://www.nisar.it/app/media-explorer)
-- Readme in Inglese: [Readme.md](https://github.com/nisar86/media-explorer/README.md)
-- Readme in Italiano: [Leggimi.md](https://github.com/nisar86/media-explorer/LEGGIMI.md)
+- Readme in Inglese: [Readme.md](https://github.com/nisar86/media-explorer/blob/main/README.md)
+- Readme in Italiano: [Leggimi.md](https://github.com/nisar86/media-explorer/blob/main/LEGGIMI.md)
 
 ## Licenza
 
-[Licenza di Media Explorer](https://github.com/nisar86/media-explorer/LICENSE.txt)
+[Licenza di Media Explorer](https://github.com/nisar86/media-explorer?tab=MIT-1-ov-file)
 
-##Sviluppatore
+## Sviluppatore
 
 [Nisar Abed (Nisar.it)](https://www.nisar.it)
 
-##Screenshot
+## Screenshot
 
 ![Screenshot Riproduzione Video (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_play_video.jpg) 
 ![Screenshot Lista (Desktop)](https://www.nisar.it/app/media-explorer/screenshots/fam_desktop_list_files.jpg) 
