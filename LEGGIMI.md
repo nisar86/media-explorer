@@ -80,7 +80,7 @@ Sviluppato con HTML, JS e [jQuery](https://jquery.com/) è progettato per funzio
 
 ## Problemi Noti 
 
-###Problemi che possono presentarsi in modalità Web Server PHP
+### Problemi che possono presentarsi in modalità Web Server PHP
 
 Alcune configurazioni del web server possono impedire il corretto funzionamento di alcuni formati media (video/audio/immagini).  
 **La compressione lato server (Brotli/gzip)** applicata ai file può creare problemi e **andrebbe disattivata** nelle cartelle che contengono i media usati dalla app.
