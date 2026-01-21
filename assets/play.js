@@ -9,7 +9,7 @@
   $(document).ready(function() {
 
     const APP_NAME = 'Media Explorer';
-    const APP_VER  = '1.0';
+    const APP_VER  = '1.1';
     // Set App Title
     document.title = APP_NAME;
 
@@ -1048,6 +1048,7 @@
      */
     const selectFam  = '.file_access_mode select.fam_select';
     function fileAccessMode_init(selectedEngine){
+        currentLoadToken++;
         resetApp();
         // Set File Access Mode
         switch(selectedEngine){
